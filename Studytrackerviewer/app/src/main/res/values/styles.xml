@@ -1,0 +1,10 @@
+<!-- res/values/styles.xml -->
+<resources>
+
+    <style name="BottomNavText"
+        parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+</resources>

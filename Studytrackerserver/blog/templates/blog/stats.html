@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>객체 감지 통계</title>
+
+    <!-- Chart.js 로드 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { width: 600px; margin: 0 auto; }
+    </style>
+</head>
+
+<body>
+    <h1>YOLO 객체 감지 통계</h1>
+    <p>객체별 감지 횟수를 차트로 표시합니다.</p>
+
+    <div class="container">
+        <canvas id="chart"></canvas>
+    </div>
+
+    <script>
+        fetch("/api/object-stats/")
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById("chart").getContext("2d");
+
+                new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: data.names,
+                        datasets: [{
+                            label: "감지 횟수",
+                            data: data.counts,
+                            backgroundColor: "rgba(75, 192, 192, 0.6)"
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true }
+                        }
+                    }
+                });
+            });
+    </script>
+</body>
+</html>

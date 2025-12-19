@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }} - 포토 블로그</title>
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            margin: 40px auto;
+            max-width: 700px;
+            background-color: #f8f8f8;
+            color: #222;
+        }
+        .post {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        h1 {
+            color: #ff7d2a;
+        }
+        .meta {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <h1>{{ post.title }}</h1>
+        <div class="meta">
+            작성자: {{ post.author }} |
+            작성일: {{ post.created_date|date:"Y-m-d H:i" }}
+        </div>
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}">
+        {% endif %}
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+</body>
+</html>

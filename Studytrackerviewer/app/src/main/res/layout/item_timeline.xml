@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/timelineTime"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="10:15:30"
+        android:textColor="#555555"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/timelineState"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="산만 (스마트폰)"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:textSize="14sp"/>
+
+    <ImageView
+        android:id="@+id/timelineImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:contentDescription="Captured image"/>
+
+</LinearLayout>

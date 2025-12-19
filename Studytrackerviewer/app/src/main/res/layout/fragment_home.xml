@@ -1,0 +1,177 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 제목 -->
+        <TextView
+            android:text="오늘의 공부"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#111111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- 현재 상태 카드 -->
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:padding="20dp"
+            android:background="@drawable/bg_card_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/currentStatusLabelTextView"
+                android:text="현재 상태"
+                android:textColor="#777777"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/currentStatusMessageTextView"
+                android:text="집중 중"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#4CAF50"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- 공부 오브젝트 선택 카드 -->
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:padding="20dp"
+            android:background="@drawable/bg_card_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 카드 제목 -->
+            <TextView
+                android:text="공부 오브젝트 선택"
+                android:textColor="#111111"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- 설명 -->
+            <TextView
+                android:text="선택한 오브젝트만 공부 시간으로 인식돼요"
+                android:textColor="#777777"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- 오브젝트 목록 (체크박스들을 담을 컨테이너) -->
+            <LinearLayout
+                android:id="@+id/allowedObjectsContainer"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/checkBook"
+                    android:text="책"
+                    android:textColor="#111111"
+                    android:buttonTint="#4CAF50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <CheckBox
+                    android:id="@+id/checkLaptop"
+                    android:text="노트북"
+                    android:textColor="#111111"
+                    android:buttonTint="#4CAF50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <CheckBox
+                    android:id="@+id/checkTablet"
+                    android:text="태블릿"
+                    android:textColor="#111111"
+                    android:buttonTint="#4CAF50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <CheckBox
+                    android:id="@+id/checkPhone"
+                    android:text="스마트폰"
+                    android:textColor="#111111"
+                    android:buttonTint="#4CAF50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- 시간 요약 카드 -->
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:padding="20dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_card_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="순수 공부"
+                    android:textColor="#777777"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/studyTimeTextView"
+                    android:text="2시간 25분"
+                    android:textSize="18sp"
+                    android:textColor="#111111"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="산만"
+                    android:textColor="#777777"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/distractedTimeTextView"
+                    android:text="12분"
+                    android:textSize="18sp"
+                    android:textColor="#FFC107"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 시작 버튼 -->
+        <Button
+            android:id="@+id/startStopStudyButton"
+            android:text="공부 시작"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginTop="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"/>
+
+    </LinearLayout>
+</ScrollView>

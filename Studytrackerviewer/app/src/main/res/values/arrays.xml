@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 게시글 정렬 기준 -->
+    <string-array name="fav_filter_options">
+        <item>전체 보기</item>
+        <item>즐겨찾기만 보기</item>
+    </string-array>
+</resources>
